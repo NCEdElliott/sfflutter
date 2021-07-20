@@ -30,13 +30,14 @@ import Flutter
 
 @UIApplicationMain
 @objc class AppDelegate: FlutterAppDelegate {
-    var window: UIWindow?
+    // var window: UIWindow?
     
     override init() {
         super.init()
         MobileSyncSDKManager.initializeSDK()
     }
-    
+
+    /*
     // MARK: UISceneSession Lifecycle
     func application(_ application: UIApplication, configurationForConnecting connectingSceneSession: UISceneSession, options: UIScene.ConnectionOptions) -> UISceneConfiguration {
         // Called when a new scene session is being created.
@@ -49,7 +50,8 @@ import Flutter
         // If any sessions were discarded while the application was not running, this will be called shortly after application:didFinishLaunchingWithOptions.
         // Use this method to release any resources that were specific to the discarded scenes, as they will not return.
     }
-
+	*/
+	
     // MARK: - App delegate lifecycle
     override func application(
         _ application: UIApplication,
@@ -59,6 +61,7 @@ import Flutter
         return super.application(application, didFinishLaunchingWithOptions: launchOptions)
     }
 
+	/*
     func registerForRemotePushNotifications() {
         UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .sound, .badge]) { (granted, error) in
             if granted {
@@ -107,4 +110,5 @@ import Flutter
     func enableIDPLoginFlowForURL(_ url: URL, options: [UIApplication.OpenURLOptionsKey: Any] = [:]) -> Bool {
         return  UserAccountManager.shared.handleIdentityProviderResponse(from: url, with: options)
     }
+	*/
 }
