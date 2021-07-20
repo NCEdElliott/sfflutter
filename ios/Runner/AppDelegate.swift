@@ -30,7 +30,7 @@ import Flutter
 
 @UIApplicationMain
 @objc class AppDelegate: FlutterAppDelegate {
-    // var window: UIWindow?
+    var window: UIWindow?
     
     override init() {
         super.init()
@@ -61,7 +61,6 @@ import Flutter
         return super.application(application, didFinishLaunchingWithOptions: launchOptions)
     }
 
-	/*
     func registerForRemotePushNotifications() {
         UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .sound, .badge]) { (granted, error) in
             if granted {
@@ -78,7 +77,7 @@ import Flutter
         }
     }
     
-    func application(_ application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {
+	override func application(_ application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {
         // Uncomment the code below to register your device token with the push notification manager
 //        didRegisterForRemoteNotifications(deviceToken)
     }
@@ -97,11 +96,11 @@ import Flutter
         }
     }
     
-    func application(_ application: UIApplication, didFailToRegisterForRemoteNotificationsWithError error: Error ) {
+	override func application(_ application: UIApplication, didFailToRegisterForRemoteNotificationsWithError error: Error ) {
         // Respond to any push notification registration errors here.
     }
     
-    func application(_ app: UIApplication, open url: URL, options: [UIApplication.OpenURLOptionsKey: Any] = [:]) -> Bool {
+	override func application(_ app: UIApplication, open url: URL, options: [UIApplication.OpenURLOptionsKey: Any] = [:]) -> Bool {
         // Uncomment following block to enable IDP Login flow
 //        return self.enableIDPLoginFlowForURL(url, options: options)
         return false;
@@ -110,5 +109,4 @@ import Flutter
     func enableIDPLoginFlowForURL(_ url: URL, options: [UIApplication.OpenURLOptionsKey: Any] = [:]) -> Bool {
         return  UserAccountManager.shared.handleIdentityProviderResponse(from: url, with: options)
     }
-	*/
 }
