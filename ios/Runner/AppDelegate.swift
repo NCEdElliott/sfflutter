@@ -26,8 +26,10 @@ import Foundation
 import UIKit
 import MobileSync
 import SwiftUI
+import Flutter
 
-class AppDelegate : UIResponder, UIApplicationDelegate {
+@UIApplicationMain
+@objc class AppDelegate: FlutterAppDelegate {
     var window: UIWindow?
     
     override init() {
@@ -49,12 +51,12 @@ class AppDelegate : UIResponder, UIApplicationDelegate {
     }
 
     // MARK: - App delegate lifecycle
-    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        // If you wish to register for push notifications, uncomment the line below.  Note that,
-        // if you want to receive push notifications from Salesforce, you will also need to
-        // implement the application(application, didRegisterForRemoteNotificationsWithDeviceToken) method (below).
-//        self.registerForRemotePushNotifications()
-        return true
+    override func application(
+        _ application: UIApplication,
+        didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?
+    ) -> Bool {
+        GeneratedPluginRegistrant.register(with: self)
+        return super.application(application, didFinishLaunchingWithOptions: launchOptions)
     }
 
     func registerForRemotePushNotifications() {
