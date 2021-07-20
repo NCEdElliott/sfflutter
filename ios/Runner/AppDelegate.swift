@@ -30,8 +30,8 @@ import Flutter
 
 @UIApplicationMain
 @objc class AppDelegate: FlutterAppDelegate {
-    var window: UIWindow?
-    
+    // var window: UIWindow?
+
     override init() {
         super.init()
         MobileSyncSDKManager.initializeSDK()
